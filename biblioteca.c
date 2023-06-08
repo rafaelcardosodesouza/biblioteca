@@ -133,15 +133,22 @@ int main() {
         printf("2 - Imprimir as informações dos livros cadastrados\n");
         printf("3 - Pesquisar por código\n");
         printf("4 - Ordenar livros por codigo\n");
+        printf("5 - Limpar a tela\n");
         printf("0 - Sair\n");
-        scanf("%d", &op);
+        scanf("opção: %d", &op);
 
         switch (op) {
             case 0: {
                 printf("Finalizando o programa, tenha um bom dia!\n");
                 break;
             }
-            case 1: 2
+            case 1: {
+                qtdLivro = cadastroLivro();
+                break;
+            }
+            case 2: {
+                infoLivro(qtdLivro);
+                break;
             }
             case 3: {
                 bucascarBook(qtdLivro);
@@ -151,6 +158,9 @@ int main() {
                 ordenado(qtdLivro);
                 break;
             }
+            case 5 :
+                system("cls");
+                break;
             default: {
                 printf("Opção inválida. Por favor, tente novamente.\n");
                 break;
